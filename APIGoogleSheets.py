@@ -76,8 +76,8 @@ def main():
         # adicionar/editar uma informação
 
         valores_adicionar = [
-            ["dezembro", "R$ 127.300,15"],
-            ["janeiro", "R$ 100.000,00"],
+            ["fevereiro", "R$ 30,150.00"],
+            ["março", "R$ 50,000.00"],
         ]
 
         result = (
