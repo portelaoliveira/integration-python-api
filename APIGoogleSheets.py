@@ -73,16 +73,23 @@ def main():
             .execute()
         )
 
-    # adicionar/editar uma informação
+        # adicionar/editar uma informação
 
-    #         valores_adicionar = [
-    #             ["dezembro", 'R$ 127.300,15'],
-    #             ["janeiro", "R$ 100.000,00"],
-    #         ]
+        valores_adicionar = [
+            ["dezembro", "R$ 127.300,15"],
+            ["janeiro", "R$ 100.000,00"],
+        ]
 
-    #         result = sheet.values().update(spreadsheetId=SAMPLE_SPREADSHEET_ID,
-    #                                     range="A13", valueInputOption="USER_ENTERED",
-    #                                       body={'values': valores_adicionar}).execute()
+        result = (
+            sheet.values()
+            .update(
+                spreadsheetId=SAMPLE_SPREADSHEET_ID,
+                range="A13",
+                valueInputOption="USER_ENTERED",
+                body={"values": valores_adicionar},
+            )
+            .execute()
+        )
 
     except HttpError as err:
         print(err)
