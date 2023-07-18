@@ -10,10 +10,10 @@
 import requests
 import json
 
-link = "seu_link_aqui"
+link = "https://apifirebase-199c3-default-rtdb.firebaseio.com/"
 
 # Criar uma venda (POST)
-dados = {"cliente": "alon", "preco": 150, "produto": "teclado"}
+dados = {"cliente": "Portela", "preco": 150, "produto": "teclado"}
 requisicao = requests.post(f"{link}/Vendas/.json", data=json.dumps(dados))
 print(requisicao)
 print(requisicao.text)
@@ -25,9 +25,9 @@ print(requisicao)
 print(requisicao.text)
 
 # Editar a venda (PATCH)
-dados = {"cliente": "lira"}
+dados = {"cliente": "Danilo"}
 requisicao = requests.patch(
-    f"{link}/Vendas/-MyJSm_N0S8KhCc3nAku/.json", data=json.dumps(dados)
+    f"{link}/Vendas/-N_dAA3_rMW9nhZAZ6n7/.json", data=json.dumps(dados)
 )
 print(requisicao)
 print(requisicao.text)
@@ -36,14 +36,14 @@ print(requisicao.text)
 requisicao = requests.get(f"{link}/Vendas/.json")
 print(requisicao)
 dic_requisicao = requisicao.json()
-id_alon = None
+id_portela = None
 for id_venda in dic_requisicao:
     cliente = dic_requisicao[id_venda]["cliente"]
-    if cliente == "alon":
+    if cliente == "Danilo":
         print(id_venda)
-        id_alon = id_venda
+        id_portela = id_venda
 
 # Deletar uma venda (DELETE)
-requisicao = requests.delete(f"{link}/Vendas/{id_alon}/.json")
+requisicao = requests.delete(f"{link}/Vendas/{id_portela}/.json")
 print(requisicao)
 print(requisicao.text)
